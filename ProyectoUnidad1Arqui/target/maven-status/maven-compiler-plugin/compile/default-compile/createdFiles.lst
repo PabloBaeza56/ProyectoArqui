@@ -1,0 +1,14 @@
+verificaciones\PDF_NoVacio.class
+main\Main.class
+verificaciones\Server.class
+lectores\ArchivoPDF.class
+verificaciones\PDF_ContieneTextoBasico.class
+main\Verificaciones.class
+verificaciones\Middleware.class
+verificaciones\CSV_NoVacio.class
+lectores\CSVInvalidoException.class
+lectores\PDFInvalidoException.class
+verificaciones\CSV_ConEncabezados.class
+main\ObtencionDatos.class
+lectores\ArchivoCSV.class
+verificaciones\BaseMiddleware.class
