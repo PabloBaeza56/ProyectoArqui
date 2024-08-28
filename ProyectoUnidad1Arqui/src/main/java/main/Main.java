@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         //recibir las cadenas correspondientes a las rutas absolutas
+        System.out.println("prueba");
         ObtencionDatos proc = new ObtencionDatos();
         proc.ejecutar("C:\\Users\\pablo\\OneDrive\\Escritorio\\ejemplo.pdf",
                 "C:\\Users\\pablo\\OneDrive\\Escritorio\\ejemplo.csv");
