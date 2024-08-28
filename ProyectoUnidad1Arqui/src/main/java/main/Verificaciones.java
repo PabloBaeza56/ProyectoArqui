@@ -10,11 +10,17 @@ import verificaciones.PDF_NoVacio;
 import verificaciones.Server;
 
 public class Verificaciones {
+    
+    public static Boolean ReglasNegocio(ArrayList<String> datosPDF,ArrayList<ArrayList<String>> datosCSV ){
+        return datosPDF != null && datosCSV != null && verificacionesPDF(datosPDF)&& verificacionesCSV(datosCSV);
+    }
 
-    public static Boolean verificacionesPDF(ArrayList<String> datosPDF) {
+    private static Boolean verificacionesPDF(ArrayList<String> datosPDF) {
         Server<ArrayList<String>> server = new Server();
 
         Middleware validacionesPDF = BaseMiddleware.link(
+                // verificar que sea diferente de nulo
+                
                 new PDF_NoVacio(),
                 new PDF_ContieneTextoBasico()
         );
@@ -23,11 +29,12 @@ public class Verificaciones {
         return server.ejecutar(datosPDF);
     }
 
-    public static Boolean verificacionesCSV(ArrayList<ArrayList<String>> datosCSV) {
+    private static Boolean verificacionesCSV(ArrayList<ArrayList<String>> datosCSV) {
         Server<ArrayList<ArrayList<String>>> server = new Server();
 
         Middleware validacionesCSV = BaseMiddleware.link(
-                new CSV_ConEncabezados(),
+                // verificar que sea diferente de nulo
+                
                 new CSV_NoVacio()
         );
         server.setMiddleware(validacionesCSV);

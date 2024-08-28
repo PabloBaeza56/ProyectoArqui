@@ -13,9 +13,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 @AllArgsConstructor
 public class ArchivoPDF {
 
-    @Setter
-    @Getter
-    private String rutaArchivo;
+    @Setter @Getter private String rutaArchivo;
 
     public ArrayList<String> leer() throws PDFInvalidoException {
         try (PDDocument documento = PDDocument.load(new File(this.rutaArchivo))) {
@@ -28,4 +26,6 @@ public class ArchivoPDF {
             throw new PDFInvalidoException(e);
         }
     }
+    
+    
 }

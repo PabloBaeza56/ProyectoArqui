@@ -1,4 +1,5 @@
 verificaciones\PDF_NoVacio.class
+main\RellenarPlantilla.class
 main\Main.class
 verificaciones\Server.class
 lectores\ArchivoPDF.class

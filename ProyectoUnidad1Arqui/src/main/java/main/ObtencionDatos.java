@@ -20,8 +20,10 @@ public class ObtencionDatos {
             this.datosArchivoPDF = arc.leer();  
         } catch (CSVInvalidoException  ex) {
             System.out.println("El csv no existe");
+            this.datosArchivoCSV = null;
         } catch (PDFInvalidoException ex){
             System.out.println("El pdf no existe");
+            this.datosArchivoPDF = null;
         }
     } 
 }

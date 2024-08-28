@@ -13,9 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ArchivoCSV {
 
-    @Setter
-    @Getter
-    private String rutaArchivo;
+    @Setter @Getter private String rutaArchivo;
 
     public ArrayList<ArrayList<String>> leer() throws CSVInvalidoException {
         ArrayList<ArrayList<String>> lineas = new ArrayList<>();
@@ -30,19 +28,6 @@ public class ArchivoCSV {
             throw new CSVInvalidoException(e);
         }
 
-    }
-
-    public void impresionPrueba() {
-        try {
-            ArrayList<ArrayList<String>> lineas = this.leer();
-            for (ArrayList<String> linea : lineas) {
-                for (String campo : linea) {
-                    System.out.print(campo + " ");
-                }
-                System.out.println();
-            }
-        } catch (CSVInvalidoException ex) {
-        }
     }
 
 }
