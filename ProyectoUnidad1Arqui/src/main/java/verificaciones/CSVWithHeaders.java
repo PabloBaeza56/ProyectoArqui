@@ -2,7 +2,7 @@ package verificaciones;
 
 import java.util.ArrayList;
 
-public class CSV_ConEncabezados extends BaseMiddleware<ArrayList<ArrayList<String>>> {
+public class CSVWithHeaders extends BaseMiddleware<ArrayList<ArrayList<String>>> {
 
     @Override
     public boolean check(ArrayList<ArrayList<String>> info) {
