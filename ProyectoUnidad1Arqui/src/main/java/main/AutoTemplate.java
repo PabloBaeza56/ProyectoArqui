@@ -12,7 +12,9 @@ public class AutoTemplate {
         ArrayList<String> PDFFileData = proc.getDataFilePDF();
         ArrayList<ArrayList<String>> CSVFileData = proc.getDataFileCSV();
 
-        if (Verifications.BusinessRules(PDFFileData, CSVFileData)) {
+        Verifications verifications = new Verifications(PDFFileData, CSVFileData,new ArrayList());
+
+        if (Verifications.BusinessRules()) {
 
             Template plt = new Template(CSVFileData, PDFFileData);
             plt.fill();
