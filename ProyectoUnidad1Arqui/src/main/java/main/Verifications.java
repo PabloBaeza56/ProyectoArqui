@@ -8,13 +8,17 @@ import verificaciones.PDFNotEmpty;
 import verificaciones.PDFContainsBasicText;
 import verificaciones.Server;
 
+@AllArgsConstructor
 public class Verifications {
+    private ArrayList<String> dataPDF;
+    private ArrayList<ArrayList<String>> dataCSV;
+    private ArrayList<String> tags;
     
-    public static Boolean BusinessRules(ArrayList<String> dataPDF,ArrayList<ArrayList<String>> dataCSV ){
-        return dataPDF != null && dataCSV != null && verificacionesPDF(dataPDF)&& verificacionesCSV(dataCSV);
+    public Boolean BusinessRules(ArrayList<String> dataPDF,ArrayList<ArrayList<String>> dataCSV ){
+        return this.dataPDF != null && this.dataCSV != null && verificacionesPDF(dataPDF)&& verificacionesCSV(dataCSV);
     }
 
-    private static Boolean verificacionesPDF(ArrayList<String> dataPDF) {
+    private Boolean verificacionesPDF(ArrayList<String> dataPDF) {
         Server<ArrayList<String>> server = new Server();
 
         Middleware validacionesPDF = BaseMiddleware.link(// verificar que sea diferente de nulo
@@ -32,7 +36,8 @@ public class Verifications {
 
         Middleware validacionesCSV = BaseMiddleware.link(// verificar que sea diferente de nulo
                 
-                new CSVNotEmpty()
+                new CSVNotEmpty(),
+                new CSVWithHeaders(tags)
         );
         server.setMiddleware(validacionesCSV);
 
