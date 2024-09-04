@@ -11,19 +11,20 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
 @AllArgsConstructor
-public class ArchivoPDF {
+public class PDFFile implements FileDataLoader<ArrayList<String>>{
 
-    @Setter @Getter private String rutaArchivo;
+    @Setter @Getter private String filePath;
 
-    public ArrayList<String> leer() throws PDFInvalidoException {
-        try (PDDocument documento = PDDocument.load(new File(this.rutaArchivo))) {
+    @Override
+    public ArrayList<String> read()  {
+        try (PDDocument document = PDDocument.load(new File(this.filePath))) {
             PDFTextStripper stripper = new PDFTextStripper();
             stripper.setSortByPosition(true);
-            String textoPDF = stripper.getText(documento);
-            String[] lineasArray = textoPDF.split(System.lineSeparator());
-            return new ArrayList<>(Arrays.asList(lineasArray));
+            String PDFtext = stripper.getText(document);
+            String[] arrayLines = PDFtext.split(System.lineSeparator());
+            return new ArrayList<>(Arrays.asList(arrayLines));
         } catch (IOException e) {
-            throw new PDFInvalidoException(e);
+            return null;
         }
     }
     

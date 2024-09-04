@@ -2,12 +2,12 @@ package verificaciones;
 
 import java.util.ArrayList;
 
-public class PDF_NoVacio extends BaseMiddleware<ArrayList<String>> {
+public class PDFNotEmpty extends BaseMiddleware<ArrayList<String>> {
 
     @Override
     public boolean check(ArrayList<String> info) {
         // TODO
-        System.out.println("PDF_NoVacio");
+        System.out.println("PDF_ContieneTextoBasico");
         return checkNext(info);
     }
 }

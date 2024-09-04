@@ -2,7 +2,7 @@ package verificaciones;
 
 public class Server<T> {
 
-    private Middleware<T> middleware;
+    public Middleware<T> middleware;
 
     public void setMiddleware(Middleware<T> middleware) {
         this.middleware = middleware;
