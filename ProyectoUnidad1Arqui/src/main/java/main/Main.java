@@ -5,25 +5,29 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-
-        //recibir las cadenas correspondientes a las rutas absolutas
-        System.out.println("prueba");
         ObtencionDatos proc = new ObtencionDatos();
-        proc.ejecutar("C:\\Users\\pablo\\OneDrive\\Escritorio\\ejemplo.pdf",
-                "C:\\Users\\pablo\\OneDrive\\Escritorio\\ejemplo.csv");
+        
+        String rutaPDF = proc.seleccionarArchivo("PDF");
+        // System.out.println(rutaPDF);
+        String rutaCSV = proc.seleccionarArchivo("CSV");
+        // System.out.println(rutaCSV);
+        
+        if (rutaPDF != null && rutaCSV != null) {
+            proc.ejecutar(rutaPDF, rutaCSV);
 
-        ArrayList<String> datosArchivoPDF = proc.getDatosArchivoPDF();
-        ArrayList<ArrayList<String>> datosArchivoCSV = proc.getDatosArchivoCSV();
+            ArrayList<String> datosArchivoPDF = proc.getDatosArchivoPDF();
+            ArrayList<ArrayList<String>> datosArchivoCSV = proc.getDatosArchivoCSV();
 
-        if (Verificaciones.ReglasNegocio(datosArchivoPDF, datosArchivoCSV)) {
+            if (Verificaciones.ReglasNegocio(datosArchivoPDF, datosArchivoCSV)) {
+                Plantilla plt = new Plantilla(datosArchivoCSV, datosArchivoPDF);
+                plt.rellenar();
 
-            Plantilla plt = new Plantilla(datosArchivoCSV, datosArchivoPDF);
-            plt.rellenar();
-
-            System.out.println("FIN PROGRAMA");
+                System.out.println("FIN PROGRAMA");
+            } else {
+                System.out.println("Archivos erroneos");
+            }
         } else {
-            System.out.println("Archivos erroneos");
+            System.out.println("No se seleccionaron archivos.");
         }
-
     }
 }
