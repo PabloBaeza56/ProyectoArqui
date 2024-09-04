@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CSVWithHeaders extends BaseMiddleware<ArrayList<ArrayList<String>>> {
 
     private ArrayList<String> header;
-    private ArrayList<ArrayList<String>> info
+    private ArrayList<ArrayList<String>> info;
 
     public CSVWithHeaders(ArrayList<String> header){
         this.header = header;
@@ -18,7 +18,6 @@ public class CSVWithHeaders extends BaseMiddleware<ArrayList<ArrayList<String>>>
         && getSecondLineElement(getFirstLineFile()).equals(getSecondLineElement(header))){
             return false;
         }
-        // TODO
         System.out.println("CSV_ConEncabezados");
         return checkNext(info);
     }

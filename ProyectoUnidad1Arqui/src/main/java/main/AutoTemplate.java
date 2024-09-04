@@ -12,9 +12,14 @@ public class AutoTemplate {
         ArrayList<String> PDFFileData = proc.getDataFilePDF();
         ArrayList<ArrayList<String>> CSVFileData = proc.getDataFileCSV();
 
-        Verifications verifications = new Verifications(PDFFileData, CSVFileData,new ArrayList());
 
-        if (Verifications.BusinessRules()) {
+        ArrayList<String> tags = new ArrayList<>();
+        tags.add("destinatario");
+        tags.add("remitente");
+
+        Verifications verifications = new Verifications(PDFFileData, CSVFileData,tags); 
+
+        if (verifications.BusinessRules()) {
 
             Template plt = new Template(CSVFileData, PDFFileData);
             plt.fill();
