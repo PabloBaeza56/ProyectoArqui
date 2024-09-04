@@ -14,7 +14,7 @@ public class Verifications {
     private ArrayList<ArrayList<String>> dataCSV;
     private ArrayList<String> tags;
     
-    public Boolean BusinessRules(ArrayList<String> dataPDF,ArrayList<ArrayList<String>> dataCSV ){
+    public Boolean BusinessRules(){
         return this.dataPDF != null && this.dataCSV != null && verificacionesPDF(dataPDF)&& verificacionesCSV(dataCSV);
     }
 
