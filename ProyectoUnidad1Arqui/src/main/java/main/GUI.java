@@ -139,7 +139,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         AutoTemplate template = new AutoTemplate();
-        template.start(absolutePathPDFFile.getText(), absolutePathCSVFile.getText(), absolutePathOutDir.getText()); 
+        template.start(absolutePathPDFFile.getText().replaceAll("\"", ""), absolutePathCSVFile.getText().replaceAll("\"", ""), absolutePathOutDir.getText().replaceAll("\"", "")); 
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void absolutePathPDFFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_absolutePathPDFFileActionPerformed

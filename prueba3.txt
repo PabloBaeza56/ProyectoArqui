@@ -1,0 +1,4 @@
+<remitente
+ >Lorem ipsum PRUEBA 
+<destinatario>
+<destinatario>
