@@ -1,4 +1,4 @@
-package verificaciones;
+package verifications;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,6 @@ public class CSVWithHeaders extends BaseMiddleware<ArrayList<ArrayList<String>>>
         && CSVutilities.getSecondLineElement(getFirstLineFile()).equals(CSVutilities.getSecondLineElement(header))){
             return false;
         }
-        System.out.println("CSV_ConEncabezados");
         return checkNext(info);
     }
 

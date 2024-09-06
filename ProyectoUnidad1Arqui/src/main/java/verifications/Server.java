@@ -1,4 +1,4 @@
-package verificaciones;
+package verifications;
 
 public class Server<T> {
 
@@ -8,12 +8,12 @@ public class Server<T> {
         this.middleware = middleware;
     }
 
-    public boolean ejecutar(T tipo) {
+    public boolean executeChain(T tipo) {
         if (middleware.check(tipo)) {
-            System.out.println("EXITO");
+            System.out.println("ALL CORRECT");
             return true;
         }
-        System.out.println("FRACASO");
+        System.out.println("ERROR IN VALIDATIONS");
         return false;
     }
 }

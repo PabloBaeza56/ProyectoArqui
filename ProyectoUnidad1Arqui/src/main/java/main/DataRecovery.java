@@ -1,8 +1,8 @@
 package main;
 
 import java.util.ArrayList;
-import lectores.CSVFile;
-import lectores.TXTFile;
+import readers.CSVFile;
+import readers.TXTFile;
 import lombok.Getter;
 
 

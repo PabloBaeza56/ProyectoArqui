@@ -1,4 +1,4 @@
-package verificaciones;
+package verifications;
 
 import java.util.ArrayList;
 

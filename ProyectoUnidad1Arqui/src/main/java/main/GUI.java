@@ -70,7 +70,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setText("Auto-Template");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Absolute Path PDF File:");
+        jLabel2.setText("Absolute Path TXT File:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Absolute Path CSV File:");

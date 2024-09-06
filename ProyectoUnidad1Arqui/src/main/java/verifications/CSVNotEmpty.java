@@ -1,4 +1,4 @@
-package verificaciones;
+package verifications;
 
 import java.util.ArrayList;
 
@@ -11,13 +11,6 @@ public class CSVNotEmpty extends BaseMiddleware<ArrayList<ArrayList<String>>> im
                 return false;
             }   
         }
-        System.out.println("CSV_NoVacio");
         return checkNext(info);
     }
-    
 }
-
-
-// C:\Users\tyron\Downloads\prueba1.csv
-
-// C:\Users\tyron\Downloads\prueba.pdf

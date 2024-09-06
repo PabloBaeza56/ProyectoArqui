@@ -1,4 +1,4 @@
-package verificaciones;
+package verifications;
 
 public abstract class BaseMiddleware<T> implements Middleware<T> {
 

@@ -1,4 +1,4 @@
-package verificaciones;
+package verifications;
 
 public interface Middleware<T> {
 

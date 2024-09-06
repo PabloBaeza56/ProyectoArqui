@@ -1,4 +1,4 @@
-package lectores;
+package readers;
 
 
 public interface FileDataLoader<T> {
