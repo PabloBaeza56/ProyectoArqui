@@ -7,8 +7,8 @@ import verificaciones.BaseMiddleware;
 import verificaciones.CSVNotEmpty;
 import verificaciones.CSVWithHeaders;
 import verificaciones.Middleware;
-import verificaciones.PDFNotEmpty;
-import verificaciones.PDFContainsBasicText;
+import verificaciones.TXTNotEmpty;
+import verificaciones.TXTContainsTags;
 import verificaciones.Server;
 
 @AllArgsConstructor
@@ -26,8 +26,8 @@ public class Verifications {
 
         Middleware validacionesPDF = BaseMiddleware.link(// verificar que sea diferente de nulo
                 
-                new PDFContainsBasicText(),
-                new PDFNotEmpty()
+                new TXTContainsTags(tags),
+                new TXTNotEmpty()
         );
         server.setMiddleware(validacionesPDF);
         return server.ejecutar(dataPDF);

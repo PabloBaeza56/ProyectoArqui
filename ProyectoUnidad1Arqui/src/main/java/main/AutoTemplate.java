@@ -9,7 +9,7 @@ public class AutoTemplate {
         DataRecovery proc = new DataRecovery();
         proc.execute(absolutePathPDFFile, absolutePathCSVFile);
 
-        ArrayList<String> PDFFileData = proc.getDataFilePDF();
+        ArrayList<String> TXTFileData = proc.getDataFilePDF();
         ArrayList<ArrayList<String>> CSVFileData = proc.getDataFileCSV();
 
 
@@ -17,11 +17,11 @@ public class AutoTemplate {
         tags.add("destinatario");
         tags.add("remitente");
 
-        Verifications verifications = new Verifications(PDFFileData, CSVFileData,tags); 
+        Verifications verifications = new Verifications(TXTFileData, CSVFileData,tags); 
 
         if (verifications.BusinessRules()) {
 
-            Template plt = new Template(CSVFileData, PDFFileData);
+            Template plt = new Template(CSVFileData, TXTFileData);
             plt.fill();
 
             System.out.println("PROGRAM END");

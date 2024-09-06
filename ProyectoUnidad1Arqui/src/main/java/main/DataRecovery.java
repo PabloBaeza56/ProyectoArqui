@@ -2,8 +2,9 @@ package main;
 
 import java.util.ArrayList;
 import lectores.CSVFile;
-import lectores.PDFFile;
+import lectores.TXTFile;
 import lombok.Getter;
+
 
 public class DataRecovery {
 
@@ -11,7 +12,7 @@ public class DataRecovery {
     @Getter private ArrayList<String> dataFilePDF;
 
     public void execute(String absoluteRoutePDF, String absoluteRouteCSV) {
-        PDFFile arc = new PDFFile(absoluteRoutePDF);
+        TXTFile arc = new TXTFile(absoluteRoutePDF);
         CSVFile cv = new CSVFile(absoluteRouteCSV);
 
         this.dataFileCSV = cv.read();
