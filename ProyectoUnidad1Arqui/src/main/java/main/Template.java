@@ -21,6 +21,7 @@ public class Template {
     
     public void fill() {
         boolean isFirstLine = true;
+        int numberOfFile = 1;
         
         for (ArrayList<String> line : this.dataFileCSV) {
             if (isFirstLine) {
@@ -28,7 +29,8 @@ public class Template {
                 continue;
             }
             ArrayList<String> readyText = this.intercambiarEtiqueta(firstElementInCSVRow(line), secondElementInCSVRow(line));
-            this.writeFile(readyText,this.directorio);
+            this.writeFile(readyText,this.directorio,numberOfFile);
+            numberOfFile++;
         }
     }
     
@@ -64,7 +66,7 @@ public class Template {
         return linea.get(1);
     }
     
-    private void writeFile(ArrayList<String> texto, String directorio) {
+    private void writeFile(ArrayList<String> texto, String directorio, int numberOfFile) {
 // Crear un documento PDF
         PDDocument documento = new PDDocument();
 
@@ -92,7 +94,8 @@ public class Template {
             contenidoStream.endText();
             contenidoStream.close();
 
-            documento.save(directorio);
+            documento.save(directorio+"PDF"+numberOfFile+".pdf");
+            System.out.println(directorio+"PDF"+numberOfFile+".pdf");
 
         } catch (IOException e) {
             e.printStackTrace();
