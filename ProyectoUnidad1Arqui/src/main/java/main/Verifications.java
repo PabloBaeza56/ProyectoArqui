@@ -24,12 +24,10 @@ public class Verifications {
     private Boolean verificacionesPDF(ArrayList<String> dataPDF) {
         Server<ArrayList<String>> server = new Server();
         
-        System.out.println(dataPDF);
-
         Middleware validacionesPDF = BaseMiddleware.link(
                 new TXTCorrectSintaxis(),
                 new TXTCorrectSigns(),
-                new TXTNotEmpty()
+                new TXTNotEmpty(tags)
         );
         server.setMiddleware(validacionesPDF);
         return server.executeChain(dataPDF);

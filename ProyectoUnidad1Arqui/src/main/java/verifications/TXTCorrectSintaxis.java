@@ -25,6 +25,7 @@ public class TXTCorrectSintaxis extends BaseMiddleware<ArrayList<String>> {
         }
 
         if (counterOpening != counterEnding){
+            System.out.println("ERROR -- The number of < > is diferent");
             return false;
         }
 

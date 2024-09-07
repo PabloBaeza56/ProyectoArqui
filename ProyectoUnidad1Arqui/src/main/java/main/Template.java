@@ -68,10 +68,8 @@ public class Template {
     }
     
     private void writeFile(ArrayList<String> texto, String directorio, int numberOfFile) {
-// Crear un documento PDF
         PDDocument documento = new PDDocument();
 
-        // Crear una nueva página en el PDF
         PDPage pagina = new PDPage();
         documento.addPage(pagina);
 

@@ -32,7 +32,3 @@ public class AutoTemplate {
 
     }
 }
-
-// C:\Users\pablo\OneDrive\Escritorio\prueba1.csv
-// C:\Users\pablo\OneDrive\Escritorio\prueba2.txt
-// C:\Users\pablo\OneDrive\Escritorio\prueba3.txt

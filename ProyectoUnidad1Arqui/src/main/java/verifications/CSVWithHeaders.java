@@ -16,6 +16,7 @@ public class CSVWithHeaders extends BaseMiddleware<ArrayList<ArrayList<String>>>
         this.info = info;
         if(!CSVutilities.getFirstLineElement(getFirstLineFile()).equals(CSVutilities.getFirstLineElement(header)) 
         && CSVutilities.getSecondLineElement(getFirstLineFile()).equals(CSVutilities.getSecondLineElement(header))){
+            System.out.println("ERROR -- The CSV Headers are incorrect");
             return false;
         }
         return checkNext(info);

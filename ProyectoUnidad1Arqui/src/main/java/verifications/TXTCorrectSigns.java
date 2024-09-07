@@ -30,6 +30,7 @@ public class TXTCorrectSigns extends BaseMiddleware<ArrayList<String>> {
             }
             
             if (!stack.isEmpty()) {
+                System.out.println("ERROR -- The sintax of < > is incorrect");
                 return false;
             }
         }
