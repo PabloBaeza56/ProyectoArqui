@@ -10,7 +10,6 @@ public class Server<T> {
 
     public boolean executeChain(T tipo) {
         if (middleware.check(tipo)) {
-            System.out.println("ALL CORRECT");
             return true;
         }
         System.out.println("ERROR IN VALIDATIONS");

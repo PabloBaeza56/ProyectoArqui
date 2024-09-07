@@ -109,7 +109,6 @@ public class Template {
                 e.printStackTrace();
             }
         }
-        System.out.println(texto);
     }
     
 }

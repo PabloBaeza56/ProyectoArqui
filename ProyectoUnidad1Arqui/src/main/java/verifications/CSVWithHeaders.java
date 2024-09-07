@@ -19,6 +19,12 @@ public class CSVWithHeaders extends BaseMiddleware<ArrayList<ArrayList<String>>>
             System.out.println("ERROR -- The CSV Headers are incorrect");
             return false;
         }
+        if (info.size() <= 1){
+            System.out.println("ERROR -- Not info in CSV");
+            return false;
+        }
+        
+        
         return checkNext(info);
     }
 
