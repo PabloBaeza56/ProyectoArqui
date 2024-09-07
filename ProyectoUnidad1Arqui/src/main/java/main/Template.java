@@ -2,6 +2,7 @@ package main;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -85,6 +86,8 @@ public class Template {
             // Mover el cursor a la esquina superior izquierda
             contenidoStream.beginText();
             contenidoStream.newLineAtOffset(20, alturaPagina - margenSuperior);  // Posición x = 20, y = altura de la página - margen
+            
+            Collections.reverse(texto);
             
             for (String linea : texto) {
                 contenidoStream.showText(linea);
